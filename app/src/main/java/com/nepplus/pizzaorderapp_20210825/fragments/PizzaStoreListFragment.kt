@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.nepplus.pizzaorderapp_20210825.R
+import com.nepplus.pizzaorderapp_20210825.ViewStoreDetailActivity
 import com.nepplus.pizzaorderapp_20210825.adapters.PizzaStoreAdapter
 import com.nepplus.pizzaorderapp_20210825.datas.StoreData
 import kotlinx.android.synthetic.main.fragment_pizza_store_list.*
@@ -44,6 +45,25 @@ class PizzaStoreListFragment : Fragment () {
 
         //리스트에 = 에레이리스트 대입
         //부모 = 자녀
+
+//        pizzaSoreListView.setOnClickListener {  adapterView, view, position, l ->
+//
+//            val clickedPizzaStore = mPizzaStores[position]
+//
+//            val myIntent = Intent(requireContext(), viewStoreDetailActivity :: class.java)
+//            myIntent.putExtra( "store", clickedPizzaStore)
+//            Sta스타d액티비티
+
+            PizzaStoreListView.setOnItemClickListener { adapterView, view, position, l ->
+
+                val clickedPizzaStore = mPizzaStores[ position ]
+
+                val myIntent = Intent(requireContext(), ViewStoreDetailActivity::class.java)
+                myIntent.putExtra("store", clickedPizzaStore)
+                startActivity(myIntent)
+
+
+        }
 
     }
 
