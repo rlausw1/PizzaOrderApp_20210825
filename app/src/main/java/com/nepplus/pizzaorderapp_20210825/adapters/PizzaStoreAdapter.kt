@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.nepplus.pizzaorderapp_20210825.R
 import com.nepplus.pizzaorderapp_20210825.datas.StoreData
 
@@ -33,6 +34,10 @@ class PizzaStoreAdapter(
         val nameTxt = row.findViewById<TextView>(R.id.nameTxt)
 
         nameTxt.text = data.name
+
+
+        Glide.with(mContext).load(data.logoURL).into(logoImg)
+
 
 
 
